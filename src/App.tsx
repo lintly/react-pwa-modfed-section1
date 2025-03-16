@@ -1,10 +1,22 @@
-import Parts from './Parts';
+import { useState } from "react";
 
-export default () => {
-	return (
-		<div>
-			<h1>Parts Section</h1>
-			<Parts />
-		</div>
-	);
-};
+import "./App.css";
+import LanguageSwitcher from "./components/LanguageSwitcher";
+import MyComponentMain from "./exports/MyComponentMain";
+
+function App() {
+  const [count, setCount] = useState(0);
+  return (
+    <>
+      <LanguageSwitcher />
+      <br />
+      <MyComponentMain />
+      <br />
+      <button onClick={() => setCount((count) => count + 1)}>
+        count is {count}
+      </button>
+    </>
+  );
+}
+
+export default App;
